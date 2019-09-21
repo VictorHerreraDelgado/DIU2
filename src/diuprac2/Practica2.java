@@ -14,7 +14,7 @@ import java.util.Random;
  * @author Asus
  */
 public class Practica2 extends javax.swing.JFrame {
-    private int [][] mat = new int[10][10];
+    private final int [][] mat = new int[10][10];
     private int minValue, maxValue;
     /**
      * Creates new form Practica2
