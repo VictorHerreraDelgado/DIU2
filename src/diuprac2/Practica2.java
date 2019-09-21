@@ -246,11 +246,6 @@ public class Practica2 extends javax.swing.JFrame {
             texto += "\n\n\t";
         }
         areaTexto.setText(texto);
-        
-        if(barraDes.getMinimum() == Integer.parseInt(minVText.getText()) && 
-            barraDes.getMaximum() == Integer.parseInt(maxVText.getText())){
-            System.out.println("Valor de la barra: " + barraDes.getValue());
-        }
     }
 
     private void recreaMatriz() {
@@ -260,8 +255,6 @@ public class Practica2 extends javax.swing.JFrame {
             int minValue = parseInt(minVText.getText());
             int maxValue = parseInt(maxVText.getText());
             Random r = new Random();
-            int result = r.nextInt((int) ((maxValue - minValue) + minValue));
-            //System.out.println("el valor es: "  + (int) ((maxValue-minValue)/10));
             for (int i = 0 ; i < 10; i++){
                 for (int j = 0; j < 10; j++){
                     mat[i][j] = r.nextInt((maxValue - minValue) + 1) + minValue;//(int )(Math.random() * maxValue + minValue);
@@ -281,6 +274,7 @@ public class Practica2 extends javax.swing.JFrame {
             barraDes.setMinimum(minValue);
             barraDes.setValue(minValue);
             barraDes.setMaximum(maxValue);
+            actualizaMatriz();
             
             
         } else {
@@ -291,7 +285,7 @@ public class Practica2 extends javax.swing.JFrame {
     }
 
     private boolean valida() {
-        String rex = "\\d+";
+        String rex = "[-]?\\d+";
         if(!minVText.getText().matches(rex) || 
                 !maxVText.getText().matches(rex)){
             System.err.println("Introduzca solo valores numéricos y siendo el mínimo menor que el máximo\n");
