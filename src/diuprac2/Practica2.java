@@ -39,6 +39,7 @@ public class Practica2 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         barraDes = new javax.swing.JSlider();
+        valorBarText = new javax.swing.JTextField();
         resPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaTexto = new javax.swing.JTextArea();
@@ -81,6 +82,8 @@ public class Practica2 extends javax.swing.JFrame {
             }
         });
 
+        valorBarText.setEditable(false);
+
         javax.swing.GroupLayout conPanelLayout = new javax.swing.GroupLayout(conPanel);
         conPanel.setLayout(conPanelLayout);
         conPanelLayout.setHorizontalGroup(
@@ -100,6 +103,10 @@ public class Practica2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(maxVText, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(78, 78, 78))
+            .addGroup(conPanelLayout.createSequentialGroup()
+                .addGap(381, 381, 381)
+                .addComponent(valorBarText, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         conPanelLayout.setVerticalGroup(
             conPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,7 +121,9 @@ public class Practica2 extends javax.swing.JFrame {
                     .addComponent(maxVText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(barraDes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(valorBarText, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         resPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
@@ -194,6 +203,7 @@ public class Practica2 extends javax.swing.JFrame {
         if (valida()){
             actualizaMatriz();
         }
+        
     }//GEN-LAST:event_barraDesStateChanged
 
     private void minVTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_minVTextFocusGained
@@ -229,6 +239,7 @@ public class Practica2 extends javax.swing.JFrame {
     private javax.swing.JTextField maxVText;
     private javax.swing.JTextField minVText;
     private javax.swing.JPanel resPanel;
+    private javax.swing.JTextField valorBarText;
     // End of variables declaration//GEN-END:variables
 
     private void actualizaMatriz() {
@@ -246,6 +257,7 @@ public class Practica2 extends javax.swing.JFrame {
             texto += "\n\n\t";
         }
         areaTexto.setText(texto);
+        valorBarText.setText("" + barraDes.getValue());
     }
 
     private void recreaMatriz() {
@@ -281,6 +293,7 @@ public class Practica2 extends javax.swing.JFrame {
             barraDes.setPaintTicks(false);
             barraDes.setPaintLabels(false);
             areaTexto.setText("");
+            valorBarText.setText("");
         }
     }
 
