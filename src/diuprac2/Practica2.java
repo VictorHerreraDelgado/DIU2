@@ -273,18 +273,18 @@ public class Practica2 extends javax.swing.JFrame {
                 }
             }
             barraDes.setLabelTable(null); //Esta funcion impide que el jslider se sobrecargue de labels con diferencias Max-Min muy grandes
-            if ((maxValue - minValue) <= 10){
+            if ((maxValue - minValue - 1) <= 10){
                 barraDes.setMajorTickSpacing(1);
                 barraDes.setMinorTickSpacing(1);
             }else{
-                barraDes.setMajorTickSpacing(((maxValue - minValue)/10));
-                barraDes.setMinorTickSpacing(((maxValue - minValue)/10));
+                barraDes.setMajorTickSpacing(((maxValue - minValue -1)/10));
+                barraDes.setMinorTickSpacing(((maxValue - minValue -1)/10));
             }
             
             barraDes.setPaintTicks(true);
             barraDes.setPaintLabels(true);
-            barraDes.setMinimum(minValue);
-            barraDes.setValue(minValue);
+            barraDes.setMinimum(minValue - 1);
+            barraDes.setValue(minValue - 1);
             barraDes.setMaximum(maxValue);
             actualizaMatriz();
             
